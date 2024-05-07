@@ -1,0 +1,47 @@
+float temp;
+int tempPin =0;
+float far;
+float max=0;
+float min=100;
+void setup() {
+Serial.begin(9600);
+// put your setup code here, to run once:
+}
+void loop() {
+temp= analogRead(tempPin) ;
+temp=temp * 0.48828125;
+Serial.print("TEMPERATURE IN CELCIUS=");
+Serial.print(temp);
+Serial.print("*C");
+Serial.println();
+far=(temp*(9/5))+32;
+Serial.print("TEMPERATURE IN FARENHEIT=");
+Serial.print(far);
+Serial.print("F");
+Serial.println();
+if(temp>max){
+max=temp;
+Serial.print("MAXIMUM TEMPERATURE IS=");
+Serial.print(max);
+Serial.println();
+}
+else{
+Serial.print("MAXIMUM TEMPERATURE IS=");
+Serial.print(max);
+Serial.println();
+}
+if(temp<min){
+min=temp;
+Serial.print("MINIMUM TEMPERATURE IS=");
+Serial.print(min);
+
+Serial.println();
+}
+else{
+Serial.print("MINIMUM TEMPERATURE IS=");
+Serial.print(min);
+Serial.println();
+}
+delay(3000);
+}
+// put your main code here, to run repeatedly:
